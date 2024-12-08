@@ -7,3 +7,8 @@
 /dataSources/
 /dataSources.local.xml
 *.txt
+/AdventOfCode.iml
+/misc.xml
+/modules.xml
+/uiDesigner.xml
+/vcs.xml
