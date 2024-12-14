@@ -16,7 +16,7 @@ public class Puzzle2Day14 {
         List<robot> robotList = new ArrayList<>();
         try {
             BufferedReader file = new BufferedReader(new FileReader("2024/Day14/InputDay14.txt"));
-            String line= "";
+            String line;
             while ((line = file.readLine()) != null){
                 String[] information = line.split("[pv]=|,| ");
                 robotList.add(new robot(Integer.parseInt(information[1]),Integer.parseInt(information[2]),

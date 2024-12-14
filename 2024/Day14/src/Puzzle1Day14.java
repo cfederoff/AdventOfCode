@@ -7,8 +7,6 @@ public class Puzzle1Day14 {
     static int rows = 103;
     static int columns = 101;
     public static void main(String[] args) {
-        // Press Opt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
         int[][] map = new int[rows][columns];
         for (int i = 0; i < rows; i++){
             for (int j = 0; j < columns; j++){
@@ -18,7 +16,7 @@ public class Puzzle1Day14 {
         List<robot> robotList = new ArrayList<>();
         try {
             BufferedReader file = new BufferedReader(new FileReader("2024/Day14/InputDay14.txt"));
-            String line= "";
+            String line;
             while ((line = file.readLine()) != null){
                 String[] information = line.split("[pv]=|,| ");
                 robotList.add(new robot(Integer.parseInt(information[1]),Integer.parseInt(information[2]),
