@@ -37,11 +37,12 @@ public class Puzzle2Day14 {
             for (int j = 0; j < rows; j++){
                 for(int k =0 ; k< columns; k++){
                     if (map[j][k] != 0){
-                        for (int test = k; test < k+8; test++){
-                            if ( test >= columns || map[j][test] == 0){
+                        for (int robotCheck = k; robotCheck < k+8; robotCheck++){
+                            if ( robotCheck >= columns || map[j][robotCheck] == 0){
+                                k += robotCheck-1;
                                 break;
                             }
-                            if (test + 1 == k+8){
+                            if (robotCheck + 1 == k+8){
                                 easterEggMove = i;
                                 k = columns;
                                 j = rows;
