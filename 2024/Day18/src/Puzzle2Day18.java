@@ -27,7 +27,6 @@ public class Puzzle2Day18 {
         }
         while (true) {
             boolean[][] visited = new boolean[size][size];
-            node[][] closestNode = new node[size][size];
             Queue<node> queue = new LinkedList<>();
             visited[0][0] = true;
             queue.add(new node(0, 0));
@@ -35,26 +34,22 @@ public class Puzzle2Day18 {
                 node currentNode = queue.poll();
                 if (currentNode.y - 1 > -1 && !map[currentNode.y - 1][currentNode.x] && !visited[currentNode.y - 1][currentNode.x]) {
                     visited[currentNode.y - 1][currentNode.x] = true;
-                    closestNode[currentNode.y - 1][currentNode.x] = currentNode;
                     queue.add(new node(currentNode.x, currentNode.y - 1));
                 }
                 if (currentNode.x + 1 < size && !map[currentNode.y][currentNode.x + 1] && !visited[currentNode.y][currentNode.x + 1]) {
                     visited[currentNode.y][currentNode.x + 1] = true;
-                    closestNode[currentNode.y][currentNode.x + 1] = currentNode;
                     queue.add(new node(currentNode.x + 1, currentNode.y));
                 }
                 if (currentNode.y + 1 < size && !map[currentNode.y + 1][currentNode.x] && !visited[currentNode.y + 1][currentNode.x]) {
                     visited[currentNode.y + 1][currentNode.x] = true;
-                    closestNode[currentNode.y + 1][currentNode.x] = currentNode;
                     queue.add(new node(currentNode.x, currentNode.y + 1));
                 }
                 if (currentNode.x - 1 > -1 && !map[currentNode.y][currentNode.x - 1] && !visited[currentNode.y][currentNode.x - 1]) {
                     visited[currentNode.y][currentNode.x - 1] = true;
-                    closestNode[currentNode.y][currentNode.x - 1] = currentNode;
                     queue.add(new node(currentNode.x - 1, currentNode.y));
                 }
             }
-            if (closestNode[size - 1][size - 1] == null) {
+            if (!visited[size - 1][size - 1]) {
                 break;
             } else {
                 i++;
