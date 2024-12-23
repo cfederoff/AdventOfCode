@@ -81,8 +81,7 @@ public class Puzzle2Day22 {
         }
         @Override
         public boolean equals(Object obj) {
-            if (obj instanceof tuple){
-                tuple Tuple = (tuple) obj;
+            if (obj instanceof tuple Tuple){
                 return this.one == Tuple.one && this.two == Tuple.two && this.three == Tuple.three && this.four == Tuple.four;
             }
             return false;
